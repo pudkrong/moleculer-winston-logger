@@ -19,9 +19,9 @@ const filterByServiceTransformer = winston.format((info, opts) => {
   if (info.level === 'error') return info;
 
   const logger = opts.loggers.console;
-  if (info.svc && logger) {
+  if (info.mod && logger) {
     const services = logger._services || {};
-    const serviceLevel = services[info.svc];
+    const serviceLevel = services[info.mod];
     if (!serviceLevel) return false;
     if (logger.levels[info.level] <= logger.levels[serviceLevel]) {
       return info;
@@ -48,6 +48,7 @@ const fileTransformer = winston.format.printf((logData) => {
   transformed.fields = meta;
   transformed.instance = logData.nodeID;
   transformed.service = logData.svc;
+  transformed.version = logData.ver;
   transformed.timestamp = logData.timestamp;
 
   return winston.format.json().transform(transformed)[Symbol.for('message')];

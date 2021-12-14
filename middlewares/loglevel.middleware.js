@@ -10,7 +10,7 @@ module.exports = {
           const consoleLogger = (this._winston && this._winston.console) ? this._winston.console : null;
 
           if (ctx.params && ctx.params.service && ctx.params.level) {
-            if (ctx.service.name === ctx.params.service) {
+            if (ctx.service.fullName === ctx.params.service) {
               if (consoleLogger) {
                 if (!consoleLogger._services) consoleLogger._services = {};
                 const mod = {};

@@ -9,6 +9,8 @@ const Moleculer = require('moleculer');
 module.exports = {
 	name: "app",
 
+	version: 2,
+
 	/**
 	 * Actions
 	 */
