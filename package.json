@@ -22,7 +22,6 @@
     "moleculer-repl": "^0.6.6"
   },
   "dependencies": {
-    "@aws-sdk/client-s3": "^3.44.0",
     "ioredis": "^4.28.2",
     "moleculer": "^0.14.16",
     "winston": "^3.3.3",
