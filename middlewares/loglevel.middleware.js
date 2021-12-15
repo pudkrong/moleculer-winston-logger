@@ -5,8 +5,8 @@ module.exports = {
     // inject event handler for log level change
     if (!/^\$/.test(schema.name)) {
       schema.events = (schema.events) ? schema.events : {};
-      if (Object.keys(schema.events).indexOf('loglevel') === -1) {
-        schema.events['log.level'] = (ctx) => {
+      if (Object.keys(schema.events).indexOf('__log.level') === -1) {
+        schema.events['__log.level'] = (ctx) => {
           const consoleLogger = (this._winston && this._winston.console) ? this._winston.console : null;
 
           if (ctx.params && ctx.params.service && ctx.params.level) {

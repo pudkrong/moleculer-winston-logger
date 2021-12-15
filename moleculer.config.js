@@ -75,7 +75,7 @@ winstonLoggers['rotate'] = new winston.transports.DailyRotateFile({
   filename: `social-${os.hostname().toLowerCase()}-%DATE%.log`,
   dirname: './logs',
   datePattern: 'YYYY-MM-DD',
-  maxSize: '1k',
+  maxSize: '1m',
   maxFiles: 5,
   zippedArchive: false
 });

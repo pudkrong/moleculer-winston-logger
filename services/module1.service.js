@@ -39,7 +39,7 @@ module.exports = {
 
 		event: {
 			async handler(ctx) {
-        ctx.broker.broadcast('log.level', ctx.params);
+        ctx.broker.broadcast('__log.level', ctx.params);
 
 				return "done";
 			}
